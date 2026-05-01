@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/global.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet"/>
+
+	<title>Brilho e Aroma | Amanda Silva</title>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="assets/logo.png" alt="logo da brilho e aroma">
+		</div>
+		<nav class="navigation">
+			<ul>
+				<li><a href="#inicio">Início</a></li>
+				<li><a href="#sobre">Sobre</a></li>
+				<li><a href="#produtos">Produtos</a></li>
+				<li><a href="#contato">Contato</a></li>
+			</ul>
+		</nav>
+		<!-- Botão Carrinho com contador -->
+		<div class="toggle-buttons">
+    		<button id="cart-btn" class="cart-btn">
+        		<i class="ri-shopping-cart-2-line"></i>
+        		<span id="cart-count" class="cart-count">0</span> 
+        	</button>
+    <!--n-->
+    		<button id="menu-btn" class="menu-btn">
+        		<i class="ri-menu-2-line"></i>
+    		</button>
+		</div>
+	</header>
+
+	<!-- Menu Mobile Sidebar-->
+	<div class="navigation-mobile" class="navigation-mobile">
+		<i class="ri-close-line close-menu-btn" id="close-menu-btn"></i><!--Icone de X pra fechar o menu -->
+		<ul>
+			<li><a href="#inicio">Início</a></li>
+			<li><a href="#sobre">Sobre</a></li>
+			<li><a href="#produtos">Produtos</a></li>
+			<li><a href="#contato">Contato</a></li>
+		</ul>
+	</div><!-- Menu Mobile Sidebar-->
+
+	<!-- Carrinho Sidebar -->
+	<div id="cart-sidebar" class="cart-sidebar">
+		<div class="cart-header">
+			<h3><i class="ri-shopping-basket-line" style="vertical-align: middle;"></i>Seu Carrinho</h3>
+			<i class="ri-close-line close-cart-btn" id="close-cart-btn"></i>
+		</div>
+		<div id="cart-items-container">
+			<!-- Itens do Carrinho serão inseridos aqui pelo JS -->
+			<p id="empty-cart-message">Seu carrinho está vazio.</p>
+		</div>
+		<div class="cart-footer">
+			<p>Total: <span id="cart-total">R$ 0,00</span></p>
+			<button class="checkout-btn">Finalizar Compra</button>
+		</div>
+	</div>
+	<!-- Overlay para fechar modais/sidebars com clique fora -->
+	<div class="overlay" id="overlay"></div>
+	<main>
+		<!--Inicio start-->
+		<section class="inicio" id="inicio">
+			<div class="inicio-content">
+				<h1 data-aos="fade-right" data-aos-delay="100">Transforme sua casa em um refúgio de frescor e sofisticação.</h1>
+				<p data-aos="fade-left" data-aos-delay="200">Descubra a linha completa de aromas artesanais da Brilho e Aroma, criados por Amanda Silva para trazer equilíbrio e elegância ao seu ambiente.</p>
+				<a href="#produtos" class="btn-cta">Explorar Produtos</a>
+			</div>
+		</section>
+		<!--Inicio end-->
+		<!--Sobre start-->
+	<section class="sobre" id="sobre">
+    <div class="container-sobre">
+        <div class="sobre-texto" data-aos="fade-right" data-aos-delay="100">
+            <h2 class="title" data-aos="fade-up-right" data-aos-delay="100">Nossa Fabricação Artesanal</h2>
+            <p>Na Brilho e Aroma, acreditamos no poder do feito à mão. Utilizamos ingredientes como óleo selecionado e essências exclusivas para criar produtos que limpam com eficiência e perfumam com delicadeza.</p>
+            <p>Amanda Silva e sua equipe acompanham cada mistura, garantindo a qualidade de um produto caseiro feito com amor e cuidado.</p>
+            
+            <div class="sobre-diferenciais">
+                <div class="item-diferencial" data-aos="fade-up" data-aos-delay="100">
+                    <i class="ri-heart-fill"></i> Feito com Amor
+                </div>
+                <div class="item-diferencial" data-aos="fade-up" data-aos-delay="200">
+                    <i class="ri-leaf-line"></i> Sustentável
+                </div>
+                <div class="item-diferencial" data-aos="fade-up" data-aos-delay="300">
+                    <i class="ri-award-line"></i> Alta Qualidade
+                </div>
+            </div>
+        </div>
+
+        <div class="sobre-img">
+            <img src="assets/Sobre-Image.png" alt="Pessoas preparando sabão artesanal" data-aos="fade-left" data-aos-delay="300">
+        </div>
+    </div>
+</section>
+		<!--Sobre end-->
+		<!--Produtos start-->
+<section class="produtos" id="produtos">
+    <div class="container">
+        <h2 class="title" data-aos="fade-up-right" data-aos-delay="100">Nossos Produtos</h2>
+        
+        <div class="produtos-grid">
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/Agua-sanitaria.png" alt="Agua-sanitaria">
+                <h3>Água sanitária</h3>
+                <p class="desc">Água Sanitaria Brilho e Aroma 1,5L.</p>
+                <p class="preco">R$ 15,90</p>
+                <button class="btn-card" onclick="addToCart('Agua-sanitaria', 15.90, 'assets/Agua-sanitaria.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/Amaciante.png" alt="Amaciante">
+                <h3>Amaciante</h3>
+                <p class="desc">Amaciante Brilho e Aroma de peônias 1L.</p>
+                <p class="preco">R$ 25,90</p>
+                <button class="btn-card" onclick="addToCart('Amaciante', 25.90, 'assets/Amaciante.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/Desinferante.png" alt="Desinferante">
+                <h3>Desinferante</h3>
+                <p class="desc">Desinferante Brilho e Aroma de erva doce 1L.</p>
+                <p class="preco">R$ 15,50</p>
+                <button class="btn-card" onclick="addToCart('Desinferante', 15.50, 'assets/Desinferante.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/Detergente-po.png" alt="Detergente em Pó">
+                <h3>Detergente em Pó</h3>
+                <p class="desc">Detergente em pó Brilho e Aroma de lavanda 500g.</p>
+                <p class="preco">R$ 20,50</p>
+                <button class="btn-card" onclick="addToCart('Detergente em Po', 20.50, 'assets/Detergente-po.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="500">
+                <img src="assets/Sabao-bebe.png" alt="Sabao líquido para bebê">
+                <h3>Sabão líquido para bebê</h3>
+                <p class="desc">Sabão Líquido Para Bebes Brilho e Aroma 1L.</p>
+                <p class="preco">R$ 25,50</p>
+                <button class="btn-card" onclick="addToCart('Sabao líquido para bebe', 25.50, 'assets/Sabao-bebe.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="600">
+                <img src="assets/Sabao-neutro.png" alt="Sabao líquido neutro">
+                <h3>Sabão líquido neutro</h3>
+                <p class="desc">Sabão líquido neutro Brilho e Aroma 1L.</p>
+                <p class="preco">R$ 22,50</p>
+                <button class="btn-card" onclick="addToCart('Sabao líquido neutro', 22.50, 'assets/Sabao-neutro.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="700">
+                <img src="assets/Sabao-macadamia.png" alt="Sabao líquido">
+                <h3>Sabão líquido</h3>
+                <p class="desc">Sabão Líquido Brilho e Aroma de Macadâmia 1L.</p>
+                <p class="preco">R$ 25,80</p>
+                <button class="btn-card" onclick="addToCart('Sabao líquido', 25.80, 'assets/Sabao-liquido.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="800">
+                <img src="assets/Sabao-coco.png" alt="Sabao de coco">
+                <h3>Sabão de Coco</h3>
+                <p class="desc">Sabão de Coco em Barra Brilho e Aroma 100g.</p>
+                <p class="preco">R$ 8,00</p>
+                <button class="btn-card" onclick="addToCart('Sabao de coco', 8.00, 'assets/Sabao-coco.png')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto-card" data-aos="fade-up" data-aos-delay="900">
+                <img src="assets/Sabonete-liquido.png" alt="Sabonete-liquido">
+                <h3>Sabonete-liquido</h3>
+                <p class="desc">Sabonete Líquido Brilho e Aroma Para as Mãos de Lavanda.</p>
+                <p class="preco">R$ 12,00</p>
+                <button class="btn-card" onclick="addToCart('Sabonete-liquido', 12.00, 'assets/Sabonete-liquido.png')">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+      </div>
+         <div class="bandeiras" data-aos="fade-in" data-aos-delay="500">
+        <img src="assets/bandeiras/alelo-842-596.png" alt="Alelo" class="pulse">
+        <img src="assets/bandeiras/visa-512-512.png" alt="Visa" class="pulse">
+        <img src="assets/bandeiras/hipercard-1280-720.png" alt="Hipercard" class="pulse">
+        <img src="assets/bandeiras/maestro-600-600.png" alt="Maestro" class="pulse">
+        <img src="assets/bandeiras/mastercard-768x432.png" alt="Mastercard" class="pulse">
+        <img src="assets/bandeiras/elo-600-279.png" alt="Elo" class="pulse">
+        <img src="assets/bandeiras/Pix-960-341.png" alt="Pix" class="pulse">
+    </div>
+</section>
+		<!--Produtos end-->
+		<!--Contato start-->
+		<section class="contato" id="contato">
+			<div class="container">
+				<h2 class="title" data-aos="zoom-in" data-aos-delay="100">Fale Conosco</h2>
+				<div class="contato-wrapper">
+					<div class="contato-info">
+						<h3>Entre em contato para pedidos personalizados ou dúvidas.</h3>
+						<p>Estamos prontos para atender você e perfumar o seu dia.</p>
+						<div class="info-item">
+							<i class="ri-whatsapp-line"></i>
+							<span>(11) 98875-5085</span>
+						</div>
+						<div class="info-item">
+							<i class="ri-mail-line"></i>
+							<span>contato@brilhoearoma.com.br</span>
+						</div>
+						<div class="info-item">
+							<i class="ri-map-pin-line"></i>
+							<span>São Paulo, SP - Atendimento Online</span>
+						</div>
+					</div><!--contato-info-->
+
+					<form class="contato-form" data-aos="fade-up" delay="100">
+						<div class="form-group">
+							<input type="texto" placeholder="Seu Nome" required>
+						</div>
+						<div class="form-group">
+							<input type="email" placeholder="Seu Email" required>
+						</div>
+						<div class="form-group">
+							<textarea placeholder="Como podemos ajudar?" rows="5" required></textarea>
+						</div>
+						<button type="submit" class="btn-cta">Enviar Mensagem</button>
+					</form>
+				</div><!--contato-wrapper-->
+			</div><!--Container-->
+		</section>
+		<!--Contato end-->
+	</main>
+	<footer>
+		<p>&copy; 2026 Brilho e Aroma. Todos os direitos reservados.</p>
+		<div class="sociais">
+			<a href="#"><i class="ri-instagram-line"></i></a>
+			<a href="#"><i class="ri-threads-line"></i></a>
+			<a href="#"><i class="ri-youtube-line"></i></a>
+		</div>
+	</footer>
+
+<script src="assets/js/script.js"></script>	
+<script src="assets/js/carrinhocontador.js"></script>
+
+<div id="success-toast" class="success-toast">
+    <i class="ri-checkbox-circle-fill"></i>
+    <span>Pedido enviado para o WhatsApp!</span>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Duração da animação em milissegundos
+    once: true,     // Anima apenas uma vez ao rolar
+  });
+</script>	
+</body>
+</html>
